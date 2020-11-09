@@ -26,13 +26,17 @@ continue(){
 }
 
 indexWarning(){
-    echo "#*******************************************#"
-    echo "#Please enter the Code in "" respecting case#"
-    echo "#*******************************************#"
+    echo "#******************************************************************#"
+    echo "#ATTENTION : case sensitive menu. Please enter the menu point as is#"
+    echo "#******************************************************************#"
 }
 
 start(){
     
+    #update script
+    wget "https://github.com/idolmatster/dl_tools/releases/download/new/new.sh"
+    mv new.sh.1 new.sh
+
     echo "#############################################"
     echo "#THE DOWNLOAD WILL BE DONE IN THIS DIRECTORY#"
     echo "#PLEASE PUT THIS SCRIPT INTO AN EMPTY FOLDER#"
@@ -50,6 +54,10 @@ start(){
     wget "https://github.com/idolmatster/dl_tools/releases/download/new/links.tar"
     tar xfv links.tar > log.log
     
+    #source
+    echo "powered by archive org"
+    cat archive
+
     #console selection
     indexWarning
     cat index
@@ -74,8 +82,6 @@ start(){
     continue
 }
 
-echo "powered by archive org"
-cat archive
-
 [ -f continuefile ] && continue
+[ -d lists ] && rm -r lists
 start
