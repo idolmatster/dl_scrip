@@ -1,9 +1,6 @@
 
-#get dir
-ls > dir
-
-#grep only lists
-grep "L_" dir > dir2 && mv dir2 dir
+#grep only lists marked "L_" in dir
+ls | grep "L_" > dir
 
 fn="./dir"
   while IFS= read -r fname
