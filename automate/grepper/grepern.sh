@@ -86,6 +86,16 @@ done <"$nfr"
 
 echo "done nintendo"
 
+rm run.sh
+
+echo "europe"
+grep "(Europe" L_all > L_europe
+grep ",Europe" L_all >> L_europe
+
+echo "western"
+grep "(Europe" L_all > L_western
+grep "(USA" L_all >> L_western
+
 echo "done"
 
 exit 0;
